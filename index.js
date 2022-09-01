@@ -30,9 +30,8 @@ function EncryptText(){
     if(recivedText=== "" || recivedText === undefined){
         recivedText = "No se ingreso el texto.";
     } else {
-        recivedText = ProcessText("encrypt",recivedText);
+        ProcessText("encrypt",recivedText);
     }
-    console.log(recivedText);
 }
 
 function DecryptText(){
@@ -40,9 +39,8 @@ function DecryptText(){
     if(recivedText=== "" || recivedText === undefined){
         recivedText = "No se ingreso el texto.";
     } else {
-        recivedText = ProcessText("decrypt",recivedText);
+        ProcessText("decrypt",recivedText);
     }
-    document.getElementById("OutProcess").innerHTML = recivedText;
 }
 
 function ProcessText(type, text){
@@ -63,5 +61,18 @@ function ProcessText(type, text){
     } else {
         varText = "Problema en los servicios al procesar."
     }
-    return varText;
+    document.getElementById("OutProcess").innerHTML = varText;
+}
+
+function CopyOut(){
+    document.getElementById("TextEncrypt").value = "";
+    var text = document.getElementById("OutProcess").innerHTML;
+    console.log(text);
+    navigator.clipboard.writeText(text)
+    .then(() => {
+        console.log('Text copied to clipboard');
+    })
+    .catch(err => {
+        console.error('Error in copying text: ', err);
+    });
 }

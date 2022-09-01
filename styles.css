@@ -65,13 +65,26 @@ form {
     padding: 2px 15px;
     width: 80%;
     text-align: center;
-    border-radius: 15px;
+    border-radius: 20px;
     display: inline-block;
     vertical-align: top;
     background-color: white;
     box-shadow: 3px 10px 15px 0.5px #2E0249;
 }
 
+.card-out p {
+    font-size: 1.7em;
+}
+.btn-copy{
+    margin: 2px 0px;
+    background-color: #f3f3f3;
+    padding: 5px;
+    border: 2px solid #c9c9c9;
+    border-radius: 5px;
+}
+.btn-copy:active{
+    background-color: #726981;
+}
 
 /*CSS para formato responsive*/
 @media (max-width: 900px) {
@@ -93,7 +106,7 @@ form {
     .buttons button{
         width: auto;
         padding: 15px 20px;
-        font-size: 28px;
+        font-size: 22px;
     }
     .btn-encrypt{
         font-size: 0.5em;
