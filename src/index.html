@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>EnDe - Encriptador de texto</title>
+</head>
+<body>
+    <header>
+        <div>
+            <h1 class="logo">EnDe+</h1>
+        </div>
+    </header>
+    
+    <main>
+        <form>
+            <textarea class="txtEncode" name="encodeContent" id="TextEncrypt" cols="20" rows="10" placeholder="Ingrese el texto"></textarea>
+            <div class="buttons">
+                <button type="button" class="btn-encrypt" onclick="EncryptText()">Encriptar</button>
+                <button type="button" class="btn-decrypt" onclick="DecryptText()">Desencriptar</button>
+            </div>
+        </form>
+        <div class="card-out">
+            <h1><strong>Salida procesada</strong></h1>
+            <p id="OutProcess"></p>
+        </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>

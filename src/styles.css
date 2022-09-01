@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #4c3b66;
+    font-family: 'Inter';
+}
+
+header{
+    margin: 0 20px;
+}
+
+.logo{
+    color: white;
+}
+
+
+form {
+    margin: 2em auto;
+    width: 60%;
+    display: inline-block;
+}
+
+.txtEncode{
+    margin: 0 auto;
+    padding: 20px 10px;
+    width: 100%;
+    background-color: transparent;
+    color: whitesmoke;
+    font-size: 28px;
+    resize: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: transparent;
+}
+.txtEncode:focus{
+    outline: none;
+}
+
+.buttons{
+    margin-top: 10px;
+}
+
+.buttons button{
+    width: 150px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: whitesmoke;
+    border-radius: 25px;
+}
+
+.btn-encrypt{
+    background-color: #2E0249;
+    border: 2px solid #5b5063;
+    border-radius: 25px;
+}
+.btn-decrypt{
+    background-color: #2E0249;
+    border: 2px solid #5b5063;
+    
+}
+
+.card-out{
+    margin: 0 auto;
+    padding: 5px 15px;
+    width: 80%;
+    text-align: center;
+    border-radius: 15px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: white;
+    box-shadow: 3px 10px 15px 0.5px #2E0249;
+}
+
+
+/*CSS para formato responsive*/
+@media (max-width: 900px) {
+    form{
+        display: block;
+        width: 80%;
+        height: auto;
+    }
+
+    .txtEncode{
+        height: 360px;
+        font-size: 30px;
+    }
+
+    .buttons button{
+        width: 100%;
+        padding: 25px 20px;
+        font-size: 28px;
+    }
+    .btn-encrypt{
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        font-size: 2em;
+    }
+
+    .btn-decrypt{
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 100%;
+        font-size: 2em;
+    }
+    .card-out{
+        display: block;
+    }
+}
