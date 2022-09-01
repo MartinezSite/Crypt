@@ -62,7 +62,7 @@ form {
 
 .card-out{
     margin: 0 auto;
-    padding: 5px 15px;
+    padding: 2px 15px;
     width: 80%;
     text-align: center;
     border-radius: 15px;
@@ -82,27 +82,24 @@ form {
     }
 
     .txtEncode{
-        height: 360px;
+        height: 320px;
         font-size: 30px;
     }
 
+    .buttons{
+        margin: 0 auto;
+        text-align: center;
+    }
     .buttons button{
-        width: 100%;
-        padding: 25px 20px;
+        width: auto;
+        padding: 15px 20px;
         font-size: 28px;
     }
     .btn-encrypt{
-        display: block;
-        margin: 0 auto;
-        width: 100%;
-        font-size: 2em;
+        font-size: 0.5em;
     }
 
     .btn-decrypt{
-        display: block;
-        margin: 0 auto;
-        margin-top: 20px;
-        width: 100%;
         font-size: 2em;
     }
     .card-out{
