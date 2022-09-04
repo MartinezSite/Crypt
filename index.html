@@ -9,8 +9,8 @@
 </head>
 <body>
     <header>
-        <div>
-            <h1 class="logo">EnDe+</h1>
+        <div class="logotipo">
+            <img src="img/logo.png" alt="logotipo">
         </div>
     </header>
     
@@ -23,9 +23,15 @@
             </div>
         </form>
         <div class="card-out">
-            <h1><strong>Salida procesada</strong></h1>
-            <p id="OutProcess"></p>
-            <button class="btn-copy" id="BtnCopy" onclick="CopyOut()"><img src="img/icons/copy.png" alt="Icon-copy" width="35" height="35"></button>
+            <div class="message" id="InfoMessage">
+                <img src="img/building-website.svg" alt="find">
+                <h2>
+                    <strong>Ningun mensaje fue encontrado.</strong>
+                </h2>
+                <small>Ingreso un texto que desea encriptar o desencriptar</small>
+            </div>
+            <p class="out-process" id="OutProcess"></p>
+            <button class="btn-copy" id="BtnCopy" onclick="CopyOut()"><span>Copiar</span></button>
         </div>
     </main>
 

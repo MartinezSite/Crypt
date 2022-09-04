@@ -1,5 +1,6 @@
 'use-strict'
 
+let displayCopy = 'none';
 let outText = '';
 let syntaxEncrypt = [
     {
@@ -24,46 +25,49 @@ let syntaxEncrypt = [
     }
 ]
 
+BlockCopy("none");
 
 function EncryptText(){
     let recivedText = document.getElementById("TextEncrypt").value;
-    if(recivedText=== "" || recivedText === undefined){
-        recivedText = "No se ingreso el texto.";
-    } else {
-        ProcessText("encrypt",recivedText);
-    }
+    ProcessText("encrypt",recivedText);
 }
 
 function DecryptText(){
     let recivedText = document.getElementById("TextEncrypt").value;
-    if(recivedText=== "" || recivedText === undefined){
-        recivedText = "No se ingreso el texto.";
-    } else {
-        ProcessText("decrypt",recivedText);
-    }
+    ProcessText("decrypt",recivedText);
 }
 
 function ProcessText(type, text){
     const recivedType = new String(type).toLowerCase();
     let varText = String(text);
-    if(recivedType === "encrypt"){
-        syntaxEncrypt.forEach((processCodes) => {
-            if(varText.includes(processCodes.key)){
-                varText = varText.replace(new RegExp(processCodes.key, "gi"), processCodes.code);
-            }
-        })   
-    } else if(recivedType === "decrypt"){
-        syntaxEncrypt.forEach((processCodes) => {
-            if(varText.includes(processCodes.code)){
-                varText = varText.replace(new RegExp(processCodes.code, "gi"), processCodes.key);
-            }
-        })   
+    if(varText !== undefined && varText !== ""){
+        document.getElementById("InfoMessage").style.display = "none";
+        BlockCopy("")
+        if(recivedType === "encrypt"){
+            syntaxEncrypt.forEach((processCodes) => {
+                if(varText.includes(processCodes.key)){
+                    varText = varText.replace(new RegExp(processCodes.key, "gi"), processCodes.code);
+                }
+            })   
+        } else if(recivedType === "decrypt"){
+            syntaxEncrypt.forEach((processCodes) => {
+                if(varText.includes(processCodes.code)){
+                    varText = varText.replace(new RegExp(processCodes.code, "gi"), processCodes.key);
+                }
+            })   
+        } else {
+            varText = "Problema en los servicios al procesar.";
+            BlockCopy("none");
+        }
+        document.getElementById("OutProcess").innerHTML = varText;
     } else {
-        varText = "Problema en los servicios al procesar."
+        document.getElementById("InfoMessage").style.display = "";
+        document.getElementById("OutProcess").innerHTML = "";
+        BlockCopy("none");
     }
-    document.getElementById("OutProcess").innerHTML = varText;
 }
 
+//Copiar en el portapapeles la informacion de salida.
 function CopyOut(){
     document.getElementById("TextEncrypt").value = "";
     var text = document.getElementById("OutProcess").innerHTML;
@@ -75,4 +79,10 @@ function CopyOut(){
     .catch(err => {
         console.error('Error in copying text: ', err);
     });
+}
+
+
+//Funcion para manejar el uso del boton Copiar.
+function BlockCopy(command){
+    document.getElementById("BtnCopy").style.display = command;
 }
