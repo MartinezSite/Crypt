@@ -113,6 +113,11 @@ form {
     background-color: #459a96;
 }
 
+footer {
+    margin: 10px 0;
+    text-align: center;
+}
+
 /*CSS para formato responsive*/
 
 @media (min-width:600px) and (max-width: 1024px){
